@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- custom video gallary -->
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <h3 class="heading">Video Gallary</h3>
+
+    <div class="container">
+
+        <div class="main-video">
+            <div class="video ">
+                <video src="./assets/video/Anime - 84574.mp4 " controls muted autoplay ></video>
+                <h3 class="video title">01. video title here </h3>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <div class="vid active">
+                <video src="./assets/video/Anime - 84574.mp4 " muted  ></video>
+                <h3 class="video title">01. video title here </h3>
+            </div>
+            <div class="vid ">
+                <video src="./assets/video/Atoms - 13232.mp4 " muted  ></video>
+                <h3 class="video title">02. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/Bullet - 3262.mp4 " muted  ></video>
+                <h3 class="video title">03. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/Candle - 1437.mp4 " muted  ></video>
+                <h3 class="video title">04. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/Globe - 6269.mp4 " muted  ></video>
+                <h3 class="video title">05. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/Pattern - 12313.mp4 " muted  ></video>
+                <h3 class="video title">06. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/pointing_blue.mp4 " muted  ></video>
+                <h3 class="video title">07. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/production ID_4096297.mp4 " muted  ></video>
+                <h3 class="video title">08. video title here </h3>
+            </div>
+            <div class="vid">
+                <video src="./assets/video/video.mp4 " muted  ></video>
+                <h3 class="video title">09. video title here </h3>
+            </div>
+        </div>
+
+
+    </div>
+
+        <!-- Custom Video Gallery End -->
+
+        <!-- JavaScript Part Start  -->
+
+    <script>
+
+        let listVideo = document.querySelectorAll(' .video-list .vid ' );
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+
+        listVideo.forEach(video => {
+            video.onclick = () => {
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                };
+
+            };
+            
+        });
+
+    </script>
+    
+        <!-- JavaScript Part End -->
+</body>
+</html>
